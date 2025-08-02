@@ -22,8 +22,9 @@ public class NpcEntity extends PathAwareEntity {
     }
 
     public static DefaultAttributeContainer.Builder createNpcAttributes() {
-        return PathAwareEntity.createMobAttributes()
-            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-            .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0);
+        DefaultAttributeContainer.Builder builder = PathAwareEntity.createMobAttributes();
+        builder.add(net.minecraft.entity.attribute.EntityAttributes.GENERIC_MAX_HEALTH, 20.0D);
+        builder.add(net.minecraft.entity.attribute.EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+        return builder;
     }
 }
